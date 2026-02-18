@@ -98,9 +98,10 @@ Follow these steps to observe leader election in action:
     ```
     *Wait until all services are healthy and running.*
 
-3.  **Start Consumer**: Run [`ClickStream-Consumer`](ClickStream-Consumer/).
-4.  **Start Producer**: Run [`ClickStream-Producer`](ClickStream-Producer/).
-    *   Observe the console output. You will see the current **Leader** (e.g., ID 2 or 3) and the **ISR (In-Sync Replicas)** list (e.g., `[2, 3]`).
+3.  **Start Producer**: Run [`ClickStream-Producer`](ClickStream-Producer/).
+4.  **Start Consumer**: Run [`ClickStream-Consumer`](ClickStream-Consumer/).
+
+     *   Observe the console output. You will see the current **Leader** (e.g., ID 2 or 3) and the **ISR (In-Sync Replicas)** list (e.g., `[2, 3]`).
 5.  **Kill the Leader Broker**:
     *   Identify which broker is the leader (e.g., if Leader is 2, it corresponds to `kafka1`).
     *   Stop that container:
