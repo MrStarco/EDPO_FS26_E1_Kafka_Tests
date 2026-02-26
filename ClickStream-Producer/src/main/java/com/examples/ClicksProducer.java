@@ -21,7 +21,7 @@ public class ClicksProducer {
     public static void main(String[] args) throws Exception {
 
         // Specify Topic
-        String topic = "click-events";
+        String topic = System.getProperty("topic.name", "click-events");
 
         // Read Kafka properties file
         Properties properties;
@@ -33,11 +33,9 @@ public class ClicksProducer {
         // Create Kafka producer
         KafkaProducer<String, Clicks> producer = producer = new KafkaProducer<>(properties);
 
-        /// delete existing topic with the same name
-        deleteTopic(topic, properties);
-
-        // create new topic with 1 partition and replication factor of 2
-        createTopic(topic, 1, 2,     properties);
+        // Topic creation/deletion is now handled externally for reproducible tests
+        // deleteTopic(topic, properties);
+        // createTopic(topic, 1, 2,     properties);
 
         int previousLeaderId = -1;
 
@@ -88,9 +86,11 @@ public class ClicksProducer {
                     previousLeaderId = -1;
                 }
 
-                // sleep for a random time interval between 500 ms and 5000 ms
+                // sleep for a random time interval
                 try {
-                    Thread.sleep(getRandomNumber(500, 5000));
+                    int minSleep = Integer.getInteger("sleep.min", 500);
+                    int maxSleep = Integer.getInteger("sleep.max", 5000);
+                    Thread.sleep(getRandomNumber(minSleep, maxSleep));
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
@@ -102,7 +102,11 @@ public class ClicksProducer {
                 producer.send(new ProducerRecord<String, Clicks>(
                         topic, // topic
                         clickEvent  // value
-                ));
+                ), (metadata, exception) -> {
+                    if (exception != null) {
+                        System.err.println("Error sending message: " + exception.getMessage());
+                    }
+                });
 
                 // print to console
                 System.out.println("clickEvent sent: "+clickEvent.toString());

@@ -28,7 +28,8 @@ public class ClicksConsumer {
         }
 
         // subscribe to relevant topics
-        consumer.subscribe(Arrays.asList("click-events"));
+        String topic = System.getProperty("topic.name", "click-events");
+        consumer.subscribe(Arrays.asList(topic));
 
 
         while (true) {
@@ -39,15 +40,11 @@ public class ClicksConsumer {
             // process consumer records depending on record.topic() and record.value()
             for (ConsumerRecord<String, Object> record : records) {
                 // switch/case
-                switch (record.topic()) {
-                    case "click-events":
+                    if (record.topic().equals(topic)) {
                         System.out.println("Received click-events - value: " + record.value()+ "- partition: "+record.partition());
-
-                        break;
-
-                    default:
+                    } else {
                         throw new IllegalStateException("Shouldn't be possible to get message on topic " + record.topic());
-                }
+                    }
             }
 
 

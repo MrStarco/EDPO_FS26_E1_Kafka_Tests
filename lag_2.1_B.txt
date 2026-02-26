@@ -1,0 +1,90 @@
+Time: 10s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          1683            1845            162             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          2451            2622            171             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 20s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          2491            2621            130             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          3305            3442            137             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 30s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          3269            3432            163             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          4103            4262            159             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 40s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          4218            4365            147             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          5059            5203            144             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 50s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          5102            5252            150             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          5942            6090            148             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 60s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          6011            6180            169             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          6844            7023            179             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 70s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          7212            7264            52              consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          8037            8096            59              consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 80s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          8043            8157            114             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          8851            8964            113             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 90s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          9023            9132            109             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          9798            9907            109             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 100s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          9993            10126           133             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          10757           10894           137             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 110s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          11039           11162           123             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          11789           11916           127             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 120s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          12092           12234           142             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          12828           12977           149             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 130s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          13174           13310           136             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          13883           14040           157             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 140s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          14172           14286           114             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          14873           14995           122             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 150s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          15186           15277           91              consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          15863           15968           105             consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 160s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          16189           16250           61              consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          16877           16951           74              consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 170s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          16903           17230           327             consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          17905           17917           12              consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1
+Time: 180s
+
+GROUP           TOPIC                         PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                   HOST            CLIENT-ID
+grp-lag-2-1-b   click-events-2-1-b-1772095150 0          17906           17994           88              consumer-grp-lag-2-1-b-1-5a817040-b520-4721-9004-21079d18282c /192.168.65.1   consumer-grp-lag-2-1-b-1
+grp-lag-2-1-b   click-events-2-1-b-1772093351 0          18583           18682           99              consumer-grp-lag-2-1-b-1-f30db41c-a023-49cb-88b5-b2ee77d66178 /192.168.65.1   consumer-grp-lag-2-1-b-1

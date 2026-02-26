@@ -1,0 +1,4 @@
+CONTAINER ID   NAME                  CPU %     MEM USAGE / LIMIT     MEM %     NET I/O         BLOCK I/O     PIDS
+bdecf8d3004e   docker-kafka2-1       50.78%    1.012GiB / 11.67GiB   8.67%     204MB / 148MB   0B / 48.1MB   97
+e1540e24e475   docker-kafka1-1       70.81%    1.043GiB / 11.67GiB   8.94%     218MB / 251MB   0B / 44.7MB   97
+a7a6d9bb209c   docker-controller-1   0.96%     234.4MiB / 11.67GiB   1.96%     275kB / 414kB   0B / 2.11MB   55
