@@ -1,0 +1,27 @@
+[project]
+name = "kafka-experiments"
+version = "0.1.0"
+description = "Simple Kafka producer, consumer, and fault tolerance experiments."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "confluent-kafka>=2.5.0",
+  "matplotlib>=3.9.0",
+  "numpy>=2.0.0",
+  "pandas>=2.2.0",
+]
+
+[project.scripts]
+producer-tests = "experiments.producer_tests:main"
+consumer-tests = "experiments.consumer_tests:main"
+fault-tolerance-tests = "experiments.fault_tolerance_tests:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+package = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["experiments"]

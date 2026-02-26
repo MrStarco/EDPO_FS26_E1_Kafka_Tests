@@ -1,0 +1,4 @@
+case,topic,messages_requested,messages_produced,messages_delivered,delivery_errors,duration_s,throughput_mps,latency_avg_ms,latency_p50_ms,latency_p95_ms,latency_p99_ms
+acks_0,producer-acks-test,20000,20000,20000,0,0.054,371761.9,4.409,4.042,8.815,10.373
+acks_1,producer-acks-test,20000,20000,20000,0,0.21,95213.9,91.598,84.828,151.516,155.489
+acks_all,producer-acks-test,20000,20000,20000,0,0.176,113533.63,105.004,109.799,139.867,142.411

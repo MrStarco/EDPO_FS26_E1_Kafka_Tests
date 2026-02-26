@@ -1,0 +1,3 @@
+case,topic,messages_expected,messages_consumed,max_poll_interval_ms,processing_delay_ms,max_poll_exceeded,completed,consumer_errors,duration_s
+low_poll_interval,consumer-poll-low_poll_interval-1772117599,8,1,6000,7000,True,False,0,10.186
+high_poll_interval,consumer-poll-high_poll_interval-1772117599,8,8,15000,7000,False,True,0,59.212

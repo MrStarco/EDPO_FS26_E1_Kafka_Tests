@@ -1,0 +1,3 @@
+policy,topic,produced_before_consumer_start,produced_after_consumer_start,consumed_before,consumed_after,consumed_total,missed_old_messages,missed_total_messages
+earliest,consumer-offset-earliest-1772117599,100,25,99,25,124,1,1
+latest,consumer-offset-latest-1772117599,100,25,0,25,25,100,100
