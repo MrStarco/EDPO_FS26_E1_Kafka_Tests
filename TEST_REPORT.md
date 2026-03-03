@@ -15,6 +15,13 @@
 - Main branch: [https://github.com/MrStarco/EDPO_FS26_E1_Kafka_Tests/tree/main](https://github.com/MrStarco/EDPO_FS26_E1_Kafka_Tests/tree/main)
 - Marco branch: [https://github.com/MrStarco/EDPO_FS26_E1_Kafka_Tests/tree/marco](https://github.com/MrStarco/EDPO_FS26_E1_Kafka_Tests/tree/marco)
 - Roman branch: [https://github.com/MrStarco/EDPO_FS26_E1_Kafka_Tests/tree/roman](https://github.com/MrStarco/EDPO_FS26_E1_Kafka_Tests/tree/roman)
+- Evan branch: [https://github.com/MrStarco/EDPO_FS26_E1_Kafka_Tests/tree/evan](https://github.com/MrStarco/EDPO_FS26_E1_Kafka_Tests/tree/evan)
+
+## Contribution Mapping
+
+- Marco Birchler: Experiment design and execution on `marco`
+- Roman Babukh: Experiment framework and outputs on `roman`
+- Evan Martino: Producer-focused experiment runs and review on `evan`
 
 ## Scope and Method
 
@@ -22,6 +29,7 @@ This document is the combined, high-level E1 report on `main`. It consolidates r
 
 - `marco` branch
 - `roman` branch
+- `evan` branch
 
 The structure follows the E1 task categories:
 
@@ -33,6 +41,7 @@ The structure follows the E1 task categories:
 
 - `marco`: `TEST_REPORT.md`, `test-configs/`, `Stats/`, `Logs/`
 - `roman`: `results/review.md`, `results/producer/summary.md`, `results/consumer/summary.md`, `results/fault_tolerance/summary.md`
+- `evan`: `review.md`, `plots/`
 
 ---
 
@@ -40,22 +49,24 @@ The structure follows the E1 task categories:
 
 ### 1.1 Batch Size and Latency
 
-Observed trend across both branches: batching materially affects throughput/latency characteristics, but the absolute impact depends on the benchmark harness.
+Observed trend across the branches: batching materially affects throughput/latency characteristics, but the absolute impact depends on the benchmark harness.
 
 - Marco - branch `marco`: small and large batch setups are both around `~145 msg/s`, with application-side sleep identified as the dominant bottleneck.
 - Roman - branch `roman`: `small_batch` = `9195.66 msg/s` (p95 `2095.639 ms`) vs `large_batch` = `161763.76 msg/s` (p95 `85.241 ms`).
+- Evan - branch `evan`: larger batch sizes increased latency but did not significantly improve throughput in the measured single-broker setup.
 
 Interpretation:
 
-- Both branches support the same conceptual result from Kafka behavior: larger batches reduce request overhead and improve effective broker utilization.
+- All branches support the same conceptual result from Kafka behavior: larger batches reduce request overhead and improve effective broker utilization.
 - The much stronger delta on `roman` indicates that client-side pacing and benchmark harness design can dominate measured Kafka tuning effects.
-- For grading interpretation, this means the *direction* of the effect is consistent across branches, while the *magnitude* is environment-dependent.
+- Evan's result reinforces the environment-dependency point: under tighter local bottlenecks, batching effects can be visible in latency before they appear in throughput.
 - Practical takeaway: optimize producer-side rate limiting and message generation path before concluding that a Kafka config does not matter.
 
 Source citations:
 
 - Marco: `origin/marco:TEST_REPORT.md`
 - Roman: `origin/roman:results/review.md`
+- Evan: `origin/evan:review.md`
 
 ### 1.2 Acknowledgment Settings (`acks`)
 
@@ -64,36 +75,42 @@ Source citations:
   - `acks=0`: `371761.9 msg/s`, p95 `8.815 ms`
   - `acks=1`: `95213.9 msg/s`, p95 `151.516 ms`
   - `acks=all`: `113533.63 msg/s`, p95 `139.867 ms`
+- Evan - branch `evan`: `acks=0` showed the highest throughput, while `acks=1` and `acks=all` reduced throughput with only a small gap between `acks=1` and `acks=all` in the single-broker setup.
 
 Interpretation:
 
 - The reliability/performance trade-off exists in both branches, but it is statistically clearer in higher-throughput and less throttled runs.
 - Marco results show that under moderate load, `acks=all` can be selected with little observed penalty.
 - Roman results show that `acks=0` can massively improve raw speed, but this setting removes durability guarantees and should not be used for reliability-critical paths.
+- Evan's findings align with the same trade-off and add consistency for local single-broker conditions.
 - Combined policy implication: default to `acks=all`, and only relax when message loss is acceptable by design.
 
 Source citations:
 
 - Marco: `origin/marco:TEST_REPORT.md`
 - Roman: `origin/roman:results/review.md`
+- Evan: `origin/evan:review.md`
 
 ### 1.3 Brokers, Partitions, and Load Scaling
 
 - Marco - branch `marco`: increasing partitions from 1 to 4 raises broker CPU from `~50%` to `~75%`, while single-producer throughput remains around `~150 msg/s`.
 - Marco - branch `marco` load test: scaling from 1 to 3 producers increases aggregate throughput from `~145` to `~514 msg/s`, with CPU near saturation at peak.
 - Roman - branch `roman`: higher-end automated producer numbers show that benchmark setup can expose substantially larger throughput envelopes.
+- Evan - branch `evan`: producer scaling increased throughput, but increasing partitions alone did not significantly improve throughput on the single-broker laptop environment.
 
 Interpretation:
 
 - Partition increases are not free: coordination and bookkeeping overhead rises even when throughput does not immediately improve.
 - Horizontal producer scaling clearly works and is required to expose broker limits in this project environment.
 - The two branches together show a consistent pattern: single-client tests can understate Kafka capacity, while multi-client tests reveal scaling behavior.
+- Evan's partition-scaling observation adds a practical boundary condition: partition count gains can remain limited when all partitions share the same broker hardware.
 - Capacity planning implication: evaluate partition count and producer parallelism together, not in isolation.
 
 Source citations:
 
 - Marco: `origin/marco:TEST_REPORT.md`
 - Roman: `origin/roman:results/review.md`
+- Evan: `origin/evan:review.md`
 
 ---
 
@@ -212,4 +229,3 @@ Source citations:
 3. Monitor consumer lag continuously; lag growth is an early warning for instability.
 4. Treat `auto.offset.reset` as a data-safety setting, not a convenience default.
 5. Interpret performance numbers in context of harness constraints (application sleeps, cluster topology, and load model).
-
